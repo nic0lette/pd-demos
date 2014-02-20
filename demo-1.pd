@@ -1,8 +1,8 @@
-#N canvas 571 76 960 644 10;
+#N canvas 282 64 960 644 10;
 #X obj 670 408 makenote;
 #X obj 629 470 noteout;
 #X obj 511 12 tgl 60 0 empty empty Start 17 7 0 14 -4034 -262144 -33289
-1 1;
+0 1;
 #X msg 611 144 60;
 #X msg 769 453 1;
 #X obj 669 547 pgmout;
@@ -18,7 +18,7 @@
 #X text 639 145 Initial note (60=C4/Middle C);
 #X text 801 452 MIDI output channel;
 #X text 724 547 (Used to set the instrument);
-#N canvas 1122 91 761 742 getNote 1;
+#N canvas 731 45 761 742 getNote 1;
 #X obj 48 21 inlet;
 #X obj 506 42 inlet;
 #X text 506 18 Initial note;
@@ -90,7 +90,7 @@
 #X obj 329 191 + 1;
 #X msg 287 158 0;
 #X obj 287 239 moses 1;
-#X obj 326 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 287 267 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 450 287 float;
 #X obj 450 310 - 24;
@@ -126,7 +126,7 @@
 #X connect 19 0 26 0;
 #X connect 20 0 19 1;
 #X connect 21 0 19 1;
-#X connect 22 1 23 0;
+#X connect 22 0 23 0;
 #X connect 23 0 24 0;
 #X connect 24 0 25 0;
 #X connect 25 0 18 0;
