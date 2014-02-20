@@ -1,0 +1,62 @@
+#N canvas 718 54 669 460 10;
+#N canvas 1376 255 429 359 logBase2 0;
+#X obj 37 22 inlet;
+#X obj 37 43 int;
+#X obj 37 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 37 65 moses 2;
+#X obj 37 107 float 0;
+#X obj 103 137 moses 2;
+#X obj 249 146 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 202 193 int;
+#X obj 248 192 + 1;
+#X obj 202 167 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 142 162 / 2;
+#X obj 102 222 int;
+#X obj 76 253 outlet;
+#X obj 103 163 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 249 166 1;
+#X obj 103 107 trigger int bang;
+#X text 136 19 This is just a small routine to calculate the log (base
+2) of a value. If it isn't a power of two... hahaha good luck with
+that XD;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 3 1 15 0;
+#X connect 4 0 12 0;
+#X connect 5 0 13 0;
+#X connect 5 1 9 0;
+#X connect 5 1 10 0;
+#X connect 6 0 14 0;
+#X connect 7 0 8 0;
+#X connect 7 0 11 1;
+#X connect 8 0 7 1;
+#X connect 9 0 7 0;
+#X connect 10 0 5 0;
+#X connect 11 0 12 0;
+#X connect 13 0 11 0;
+#X connect 14 0 7 1;
+#X connect 15 0 5 0;
+#X connect 15 1 6 0;
+#X restore 80 101 pd logBase2;
+#X obj 80 34 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 80 77 expr if ($f1 == 2 \, 2 \, $f1 - 1);
+#X obj 80 125 + 1;
+#X obj 80 197 random;
+#X obj 86 238 print rnd;
+#X obj 79 156 trigger bang int;
+#X msg 80 55 8;
+#X connect 0 0 3 0;
+#X connect 1 0 7 0;
+#X connect 2 0 0 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 6 0 4 0;
+#X connect 6 1 4 1;
+#X connect 7 0 2 0;
